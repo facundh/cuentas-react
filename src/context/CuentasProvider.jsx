@@ -1,14 +1,17 @@
 import React, { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+// Primer paso creo mi contexto, esto es lo que se va a proveer con los values
 const CuentasContext = createContext();
+// Segundo paso creo mi context para poder exportar a los children que quieran consumir de este context
 export const CuentasConsumer = () => useContext(CuentasContext);
 const CuentasProvider = ({ children }) => {
     
     // Inicializo mi monto y mis gastos;
     const [monto, setMonto] = useState(0);
+    // Va a ser un array de objetos con un valor y una description ? 
     const [gastos, setGastos] = useState([]);
-    
+    // Se utiliza para navegar a un punto en especifico de mi aplicacion
     const navigate = useNavigate();
   
   const modificarMonto = (numero) => {
@@ -18,8 +21,9 @@ const CuentasProvider = ({ children }) => {
   const agregarGastos = (consumo) => {
       // Agrego mis consumos a mis gastos
     setGastos([...gastos, consumo]);
-    // actualizo el valor de mi monto
+    // Calculo el valor de mi monto
     const nuevoMonto = monto - consumo.valor;
+    // Actualizo mi monto
     setMonto(nuevoMonto);
   };
 
@@ -49,5 +53,5 @@ const CuentasProvider = ({ children }) => {
     </CuentasContext.Provider>
   );
 };
-
+// Esto lo exporto a las rutas para que todos mis componentes puedan usar las funciones de este context
 export default CuentasProvider;
