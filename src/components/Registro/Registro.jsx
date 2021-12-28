@@ -3,7 +3,8 @@ import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { Box, Button, Container, Typography } from "@mui/material";
-
+import FormularioGastos from "../FormularioGastos/FormularioGastos";
+import ListaGastos from "../ListaGastos/ListaGastos";
 
 const Registro = () => {
   const Item = styled(Paper)(({ theme }) => ({
@@ -20,47 +21,23 @@ const Registro = () => {
 
   return (
     <>
-    <Box
-     display={"flex"}
-     alignItems={"center"}
-     justifyContent={"center"}>
-
-      <Typography
-        variant="h3"
-        component="div"
-        m={"auto"}
-        mt={2}
-        mb={3}
-        p={5}
-        textAlign={"center"}
-        fontWeight={"bold"}
-        bgcolor={"red"}
-        width={400}
-        display={"flex"}
-        alignItems={"center"}
-        justifyContent={"center"}
-        borderRadius={5}
-      >
-        {" "}
-        Gastos{" "}
-      </Typography>
-      <Typography
-        variant="h3"
-        component="div"
-        m={"auto"}
-        mt={2}
-        mb={3}
-        p={5}
-        textAlign={"center"}
-        fontWeight={"bold"}
-        bgcolor={"lightblue"}
-        width={400}
-        borderRadius={5}
-      >
-        {" "}
-        Total{" "}
-      </Typography>
-    </Box>
+      <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>
+        <Typography
+          variant="h3"
+          component="div"
+          m={"auto"}
+          mt={2}
+          mb={3}
+          p={5}
+          textAlign={"center"}
+          fontWeight={"bold"}
+          borderRadius={5}
+          className="gradient"
+        >
+          {" "}
+          Administrador de Gastos{" "}
+        </Typography>
+      </Box>
       <Container maxWidth="xl">
         <Grid
           container
@@ -72,36 +49,13 @@ const Registro = () => {
           justifyContent={"flex-start"}
           alignItems={"flex-start"}
           borderRadius={5}
-          
         >
-          <Grid item xs={5}>
-            <Item>Gasto</Item>
+          <Grid item xs={12} lg={6}>
+            <FormularioGastos />
           </Grid>
-          <Grid item xs={4}>
-            <Item>Monto</Item>
+          <Grid item xs={12} lg={6}>
+            <ListaGastos />
           </Grid>
-          <Button
-            variant="contained"
-            style={{ marginTop: 60 }}
-            color="success"
-            size="large"
-          >
-            Devolver Pago
-          </Button>
-          <Grid item xs={5}>
-            <Item>Gasto</Item>
-          </Grid>
-          <Grid item xs={4}>
-            <Item>Monto</Item>
-          </Grid>
-          <Button
-            variant="contained"
-            style={{ marginTop: 60 }}
-            color="success"
-            size="large"
-          >
-            Devolver Pago
-          </Button>
         </Grid>
       </Container>
     </>
