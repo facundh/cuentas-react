@@ -39,7 +39,7 @@ const Inicio = () => {
           component="form"
           sx={{
             bgcolor: "lightgray",
-            height: "100vh",
+            height: "600px",
             m: 4,
             p: 3,
             borderRadius: 5,

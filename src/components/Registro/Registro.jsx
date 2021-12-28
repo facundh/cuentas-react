@@ -2,8 +2,8 @@ import React from "react";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-import { Button, Container, Typography } from "@mui/material";
-import { flexbox } from "@mui/system";
+import { Box, Button, Container, Typography } from "@mui/material";
+
 
 const Registro = () => {
   const Item = styled(Paper)(({ theme }) => ({
@@ -20,6 +20,11 @@ const Registro = () => {
 
   return (
     <>
+    <Box
+     display={"flex"}
+     alignItems={"center"}
+     justifyContent={"center"}>
+
       <Typography
         variant="h3"
         component="div"
@@ -39,6 +44,23 @@ const Registro = () => {
         {" "}
         Gastos{" "}
       </Typography>
+      <Typography
+        variant="h3"
+        component="div"
+        m={"auto"}
+        mt={2}
+        mb={3}
+        p={5}
+        textAlign={"center"}
+        fontWeight={"bold"}
+        bgcolor={"lightblue"}
+        width={400}
+        borderRadius={5}
+      >
+        {" "}
+        Total{" "}
+      </Typography>
+    </Box>
       <Container maxWidth="xl">
         <Grid
           container
