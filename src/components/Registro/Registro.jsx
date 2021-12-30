@@ -21,7 +21,7 @@ const Registro = () => {
   }));
 
   const {monto} = CuentasConsumer();
-  console.log(monto)
+ 
   return (
     <>
       <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>

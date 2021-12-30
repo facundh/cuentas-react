@@ -3,17 +3,19 @@ import React from 'react'
 import DeleteIcon from '@mui/icons-material/Delete';
 
 
-const GastoItem = () => {
+
+const GastoItem = ({valor, descripcion}) => {
+    
     return (
         <Grid
         container
         borderBottom={1}
         >
             <Grid item xs={7}>
-                <Typography variant="h6">Transporte</Typography>
+                <Typography variant="h6">{descripcion}</Typography>
             </Grid>
             <Grid item xs={3}>
-            <Typography variant="h6" sx={{backgroundColor:'steelblue', color:'white', textAlign:'center',padding:'3px'}}>$5000</Typography>
+            <Typography variant="h6" sx={{backgroundColor:'steelblue', color:'white', textAlign:'center',padding:'3px'}}>{valor}</Typography>
             </Grid>
             <Grid item xs={2} sx={{display:'flex', justifyContent:'center', alignItems:'center', textAlign:'center'}}>
                 <IconButton aria-label="delete" size="small">

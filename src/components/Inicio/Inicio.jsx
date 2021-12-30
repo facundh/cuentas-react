@@ -29,9 +29,8 @@ const ColorButton = styled(Button)(({ theme }) => ({
 }));
 const Inicio = () => {
   const [inicial, setInicial] = useState(0);
-  const {monto, modificarMonto} = CuentasConsumer();
+  const { modificarMonto} = CuentasConsumer();
 
-  console.log(monto)
   const handleClick = () => {
       modificarMonto(inicial)
   }

@@ -16,7 +16,7 @@ const CuentasProvider = ({ children }) => {
   
   const modificarMonto = (numero) => {
     setMonto(numero);
-    navigate({to:"/cuentas"});
+    navigate("/cuentas");
     
   };
 
@@ -52,7 +52,7 @@ const CuentasProvider = ({ children }) => {
 
   return (
     <CuentasContext.Provider
-      value={(monto, gastos, modificarMonto, agregarGastos, borrarGasto, resetarCuentas)}
+      value={{monto, gastos, modificarMonto, agregarGastos, borrarGasto, resetarCuentas}}
     >
       {children}
     </CuentasContext.Provider>
