@@ -5,6 +5,7 @@ import Grid from "@mui/material/Grid";
 import { Box, Button, Container, Typography } from "@mui/material";
 import FormularioGastos from "../FormularioGastos/FormularioGastos";
 import ListaGastos from "../ListaGastos/ListaGastos";
+import { CuentasConsumer } from "../../context/CuentasProvider";
 
 const Registro = () => {
   const Item = styled(Paper)(({ theme }) => ({
@@ -19,6 +20,8 @@ const Registro = () => {
     backgroundColor: "lightblue",
   }));
 
+  const {monto} = CuentasConsumer();
+  console.log(monto)
   return (
     <>
       <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>

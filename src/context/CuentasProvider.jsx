@@ -16,6 +16,8 @@ const CuentasProvider = ({ children }) => {
   
   const modificarMonto = (numero) => {
     setMonto(numero);
+    navigate({to:"/cuentas"});
+    
   };
 
   const agregarGastos = (consumo) => {
@@ -44,6 +46,9 @@ const CuentasProvider = ({ children }) => {
     setGastos([]);
     navigate({to:'/'})
   }
+
+
+
 
   return (
     <CuentasContext.Provider
