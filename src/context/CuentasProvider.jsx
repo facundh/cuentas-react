@@ -29,16 +29,23 @@ const CuentasProvider = ({ children }) => {
     setMonto(nuevoMonto);
   };
 
-  const borrarGasto = (id) => {
+  const borrarGasto = (index) => {
+    
     // Primero detecto el gasto a devolver
-    const montoDevuelto = gastos.find((gasto) => gasto.id === id);
+    const montoDevuelto = gastos[index];
+    console.log(montoDevuelto)
     // Restablezco mi valor de monto
-    const montoRestablecido = monto + montoDevuelto.valor;
+    const montoRestablecido = (monto + Number(montoDevuelto.valor));
+    console.log(montoRestablecido)
+    console.log(montoDevuelto.valor)
     setMonto(montoRestablecido);
     // Tercer paso borrar el gasto de mi lista de gastos
-    const gastosFiltrados = gastos.filter((gasto) => gasto.id !== id);
-    // Cuarto actualizo mis gastos
-    setGastos(gastosFiltrados);
+
+      let nuevoArr = gastos.splice(index, 1);
+      console.log(nuevoArr)
+      // Cuarto actualizo mis gastos
+      setGastos(nuevoArr);
+    
   };
 
   const resetarCuentas = () => {

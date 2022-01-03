@@ -17,8 +17,8 @@ const ListaGastos = () => {
         }
         {
           gastos.length > 0 &&
-          gastos.map(gasto => (
-            <GastoItem valor={gasto.valor} descripcion={gasto.descripcion} />
+          gastos.map((gasto, index) => (
+            <GastoItem valor={gasto.valor} descripcion={gasto.descripcion} key={index} index={index} />
           ))
         }
       </Box>

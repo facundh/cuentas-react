@@ -1,10 +1,14 @@
 import { Grid, IconButton, Typography } from '@mui/material'
 import React from 'react'
 import DeleteIcon from '@mui/icons-material/Delete';
+import { CuentasConsumer } from '../../context/CuentasProvider';
 
 
 
-const GastoItem = ({valor, descripcion}) => {
+const GastoItem = ({valor, descripcion, index}) => {
+
+    const {borrarGasto} = CuentasConsumer();
+
     
     return (
         <Grid
@@ -19,7 +23,7 @@ const GastoItem = ({valor, descripcion}) => {
             </Grid>
             <Grid item xs={2} sx={{display:'flex', justifyContent:'center', alignItems:'center', textAlign:'center'}}>
                 <IconButton aria-label="delete" size="small">
-                    <DeleteIcon aria-label="delete" fontSize="large"  sx={{color:'red'}} />
+                    <DeleteIcon aria-label="delete" fontSize="large" onClick={()=> borrarGasto(index)} sx={{color:'red'}} />
                 </IconButton>
             </Grid>
         </Grid>
