@@ -6,12 +6,14 @@ import { CuentasConsumer } from '../context/CuentasProvider';
 // la condicion y redirect adonde vas si no cumpels con la condicion
 const PrivateRoutes = ({redirect, component}) => {
     const navigate = useNavigate();
-    const { monto } = CuentasConsumer()
+    const { montoIngresado } = CuentasConsumer();
+
+    
 
     // El effect sin llaves se ejecuta apenas se carga la pagina,
     // con llaves primero lee todas las lineas y luego se ejecuta 
     useEffect(() => {
-       if(monto <= 0){
+       if(montoIngresado <= 0){
         navigate(redirect)
        }
     })

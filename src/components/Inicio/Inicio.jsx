@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import {
   Button,
@@ -11,6 +11,7 @@ import {
 import { border, Box } from "@mui/system";
 import { blue } from "@mui/material/colors";
 import { CuentasConsumer } from "../../context/CuentasProvider";
+import { useNavigate } from "react-router";
 
 const ColorButton = styled(Button)(({ theme }) => ({
   color: theme.palette.getContrastText(blue[400]),
@@ -29,7 +30,18 @@ const ColorButton = styled(Button)(({ theme }) => ({
 }));
 const Inicio = () => {
   const [inicial, setInicial] = useState(0);
-  const { modificarMonto} = CuentasConsumer();
+  const { modificarMonto, monto} = CuentasConsumer();
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if(monto > 0 ){
+      navigate('/cuentas');
+    }
+  });
+
+  
+
 
   const handleClick = () => {
       modificarMonto(inicial)

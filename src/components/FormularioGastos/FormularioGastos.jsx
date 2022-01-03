@@ -10,7 +10,7 @@ const FormularioGastos = () => {
     valor: 0,
   });
   const { descripcion, valor } = consumo;
-  const { agregarGastos } = CuentasConsumer();
+  const { agregarGastos, resetarCuentas } = CuentasConsumer();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -30,6 +30,7 @@ const FormularioGastos = () => {
       valor: 0,
     });
   };
+  
 
   return (
     <>
@@ -63,6 +64,9 @@ const FormularioGastos = () => {
           />
           <Button variant="contained" onClick={handleClick}>
             Agregar
+          </Button>
+          <Button variant="contained" sx={{my:2}} onClick={resetarCuentas}>
+            restablecer App
           </Button>
         </Box>
       </form>

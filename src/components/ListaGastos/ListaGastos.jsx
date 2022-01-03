@@ -6,11 +6,11 @@ import GastoItem from "../GastoItem/GastoItem";
 
 const ListaGastos = () => {
 
-  const {monto, gastos} = CuentasConsumer();
+  const {monto, gastos, pintar} = CuentasConsumer();
   return (
     <>
       <Box display={'flex'} flexDirection={'column'}  mx={'auto'} py={'40px'}>
-      <Typography variant='h5' sx={{margin:'20px 0', backgroundColor:'lightblue', }} >Ingresos:{monto}</Typography>
+      <Typography variant='h5' sx={{margin:'20px 0', backgroundColor: pintar, }} >Ingresos:{monto}</Typography>
       {
         gastos.length < 1 &&
         <Typography variant="h2" sx={{margin:'20px 0'}} >No hay gastos</Typography>
